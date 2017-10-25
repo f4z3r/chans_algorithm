@@ -1,0 +1,12 @@
+[package]
+name = "chan"
+version = "0.1.0"
+authors = ["Jakob Beckmann <beckmann_jakob@hotmail.fr>",
+           "Matthäus Heer <maheer@student.ethz.ch>",
+           "Polena Lilyanova <polenal@student.ethz.ch>"]
+
+[dependencies]
+csv = "1.0.0-beta.5"
+log4rs = "0.7"
+log = "0.3.8"
+rand = "0.3.17"

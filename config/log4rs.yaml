@@ -1,0 +1,26 @@
+refresh_rate: 30 seconds
+appenders:
+  stdout:
+    kind: console
+    encoder:
+      kind: pattern
+      pattern: "{h({l})} - {m}{n}"
+  report:
+    kind: file
+    path: "log/report.log"
+    encoder:
+      kind: pattern
+      pattern: "{d(%d/%m/%Y %H:%M:%S%.3f)} {l} - {m}{n}"
+root:
+  level: info
+  appenders:
+    - stdout
+    - report
+loggers:
+  app::backend::db:
+    level: info
+  app::requests:
+    level: info
+    appenders:
+      - report
+    additive: true
