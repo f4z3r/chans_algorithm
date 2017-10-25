@@ -21,6 +21,8 @@ pub fn scan(points: &mut Vec<::Point>) -> Vec<::Point> {
 
 fn inc_hull(hull: &mut Vec<::Point>, new: &::Point) {
     let mut last_idx = hull.len() - 1;
+    // Note that we compare the anticlockwise rotation of last_idx and new based at last_idx - 1.
+    // Also note that compare(last_idx, new, _) == Greater here means that last_idx > new.
     while hull.len() > 2 && ::util::compare(&hull[last_idx], &new, &hull[last_idx - 1]) != Ordering::Less {
         hull.pop();
         last_idx -= 1;

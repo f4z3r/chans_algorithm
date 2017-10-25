@@ -11,7 +11,7 @@ use rand::distributions::{
 };
 
 pub fn read_points() -> Vec<::Point> {
-    let mut points = Vec::new();
+    let mut points: Vec<::Point> = Vec::with_capacity(1_000_000);
 
     // Create the reader
     let mut reader = match csv::Reader::from_path("static/points_init.csv") {

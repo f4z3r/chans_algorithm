@@ -11,7 +11,7 @@ extern crate log4rs;
 pub mod io;
 pub mod util;
 
-const EPSILON: f64 = 0.0001;
+const EPSILON: f64 = 0.000001;
 
 #[derive(Debug, Clone)]
 pub struct Point {
