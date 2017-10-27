@@ -9,9 +9,7 @@ pub fn algorithm(points: &mut Vec<::Point>, parallelism: u32) -> Vec<::Point> {
 
     let n_points = points.len();
 
-    // TODO: Parallelise this piece of code to spawn new threads
-
-    let (tx, rx) = mpsc::channel();
+    let (tx, rx) = mpsc::channel();     // Channel over which the threads communicate
 
     for idx in 0..parallelism {
         let transmitter = tx.clone();
@@ -34,8 +32,6 @@ pub fn algorithm(points: &mut Vec<::Point>, parallelism: u32) -> Vec<::Point> {
         hulls.push(hull);
     }
 
-
-    // TODO END of parallelisation
 
     if cfg!(feature = "animate") {                      // For animation
         let hulls_cpy = hulls.clone();

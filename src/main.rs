@@ -15,7 +15,9 @@ fn main() {
     // Set up logger for library function issues
     log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();
 
-    info!("Running with {} threads on {} points...", n_threads, n_points);
+    if cfg!(not(feature = "animate")) {
+        info!("Running with {} threads on {} points...", n_threads, n_points);
+    }
 
     // Generate random points into file
     io::generate_points(1000 as f64, n_points);
