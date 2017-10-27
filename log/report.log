@@ -1,2 +1,14 @@
-25/10/2017 20:25:02.491 INFO - Run with 10000 points. Took 0.100586040 seconds.
-25/10/2017 20:50:37.855 INFO - Run with 1000000 points. Took 10.785338887 seconds.
+27/10/2017 16:53:53.315 INFO - Run with 10000 points. Took 0.98540936 seconds.
+27/10/2017 16:53:55.110 INFO - Run with 10000 points. Took 0.103656255 seconds.
+27/10/2017 16:53:56.171 INFO - Run with 10000 points. Took 0.98927771 seconds.
+27/10/2017 16:53:57.070 INFO - Run with 10000 points. Took 0.99604255 seconds.
+27/10/2017 16:53:58.072 INFO - Run with 10000 points. Took 0.99933170 seconds.
+27/10/2017 16:53:58.984 INFO - Run with 10000 points. Took 0.101407417 seconds.
+27/10/2017 17:06:28.923 INFO - Run with 10000 points. Took 0.83037303 seconds.
+27/10/2017 17:07:16.264 INFO - Run with 1000000 points. Took 10.696811171 seconds.
+27/10/2017 17:08:35.486 INFO - Run with 1000000 points. Took 10.833286890 seconds.
+27/10/2017 17:09:38.993 INFO - Run with 1000000 points. Took 8.578569453 seconds.
+27/10/2017 17:10:32.482 INFO - Run with 50000 points. Took 0.427638718 seconds.
+27/10/2017 17:16:29.712 INFO - Took 0.859269260 seconds.
+27/10/2017 17:16:44.967 INFO - Running with 3 threads on 100000 points...
+27/10/2017 17:16:47.233 INFO - Took 0.853351771 seconds.

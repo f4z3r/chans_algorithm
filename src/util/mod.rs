@@ -1,10 +1,10 @@
 use std::cmp::Ordering;
 
 pub mod graham;
+pub mod chan;
 
-pub fn vector_length_squared(vector: (f64, f64)) -> f64 {
-    let (x, y) = vector;
-    return x.powi(2) + y.powi(2);
+pub fn distance(p1: &::Point, p2: &::Point) -> f64 {
+    (p1.x - p2.x).powi(2) + (p1.y - p2.y).powi(2)
 }
 
 
@@ -51,26 +51,18 @@ fn compare(a: &::Point, b: &::Point, base: &::Point) -> Ordering {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    // Unit testing for order_points
-    #[test]
-    fn test_order_points() {
-        unimplemented!();
-    }
-
     // Unit testing for compare
     #[test]
     fn test_compare() {
-        let p1 = ::Point::new(0 as f64, 0 as f64);
-        let p2 = ::Point::new(1 as f64, 1 as f64);
-        let p3 = ::Point::new(2 as f64, 2 as f64);
-        assert_eq!(compare(p1, p2, p3), Ordering::Equal);
+        let p1 = ::Point::new(0.0 as f64, 0.0 as f64);
+        let p2 = ::Point::new(1.0 as f64, 1.0 as f64);
+        let p3 = ::Point::new(2.0 as f64, 2.0 as f64);
+        assert_eq!(compare(&p1, &p2, &p3), Ordering::Equal);
 
-        let base = ::Point::new(0 as f64, 0 as f64);
-        let p1 = ::Point::new(1 as f64, 1 as f64);
-        let p2 = ::Point::new(0 as f64, 1 as f64);
-        assert_eq!(compare(p1, p2, base), Ordering::Greater);
-
-        assert_eq!(compare(p2, p1, base), Ordering::Less);
+        let base = ::Point::new(0.0 as f64, 0.0 as f64);
+        let p1 = ::Point::new(1.0 as f64, 1.0 as f64);
+        let p2 = ::Point::new(0.0 as f64, 1.0 as f64);
+        assert_eq!(compare(&p1, &p2, &base), Ordering::Less);
+        assert_eq!(compare(&p2, &p1, &base), Ordering::Greater);
     }
 }

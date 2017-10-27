@@ -56,7 +56,7 @@ pub fn read_points() -> Vec<::Point> {
     return points;
 }
 
-pub fn generate_points(radius: f64, n_points: i32) {
+pub fn generate_points(radius: f64, n_points: u32) {
     let mut file = match File::create("static/points_init.csv") {
         Ok(res)     => res,
         Err(_)      => {
