@@ -1,3 +1,5 @@
+//! chan::io module. Contains functions handling input and output.
+
 use std::process;
 use std::fs::File;
 use std::io::prelude::*;
@@ -10,6 +12,11 @@ use rand::distributions::{
     Range,
 };
 
+/// Reads point from a csv file. Here the file is hardcoded into the function as
+/// `static/points_init.csv`.
+///
+/// # Returns
+/// A vector of the points contained in the file.
 pub fn read_points() -> Vec<::Point> {
     let mut points: Vec<::Point> = Vec::with_capacity(1_000_000);
 

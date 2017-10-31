@@ -1,4 +1,4 @@
-//! libs.rs
+//! chan module. Provides utility functions to run chan's algorithm on 2D points in parallel.
 //!
 //! Jakob Beckmann
 

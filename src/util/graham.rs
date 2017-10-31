@@ -21,7 +21,6 @@ pub fn scan(points: &mut Vec<::Point>) -> Vec<::Point> {
             info!("{},{}", idx+2, 1);                     // For animation
         }
         inc_hull(&mut hull, point);
-
     }
 
     return hull;
@@ -33,7 +32,7 @@ fn inc_hull(hull: &mut Vec<::Point>, new: &::Point) {
     // Also note that compare(last_idx, new, _) == Greater here means that last_idx > new.
     while hull.len() > 2 && ::util::compare(&hull[last_idx], &new, &hull[last_idx - 1]) != Ordering::Less {
         if cfg!(feature = "animate") {
-            info!("{},{}", last_idx, -1);                  // For anymation
+            info!("{},{}", last_idx, -1);                  // For animation
         }
         hull.pop();
         last_idx -= 1;

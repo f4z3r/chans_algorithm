@@ -10,7 +10,7 @@ use std::env;
 fn main() {
     let args: Vec<String> = env::args().collect();
     let n_points: u32 = args[1].parse().expect("Point number must be a positive integer");
-    let n_threads: u32 = args[2].parse().expect("Thred number must be a positive integer");
+    let n_threads: u32 = args[2].parse().expect("Thread number must be a positive integer");
 
     // Set up logger for library function issues
     log4rs::init_file("config/log4rs.yaml", Default::default()).unwrap();

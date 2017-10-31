@@ -18,7 +18,7 @@ class Chan2DVisualizer:
         fig.set_size_inches(7, 7)
 
         ax.scatter(self.all_points[0], self.all_points[1], s=10, c='red', alpha=0.7)
-        ax.scatter(self.hull_points[0], self.hull_points[1], s=20, c='blue')
+        ax.plot(self.hull_points[0], self.hull_points[1], 'bo-')
 
         '''for axis in [ax.get_xaxis(), ax.get_yaxis()]:
             axis.set_ticks([])'''

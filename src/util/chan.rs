@@ -116,8 +116,6 @@ fn find_tangent_index(hull: &Vec<::Point>, base: &::Point) -> usize {
 
     // The first point is not the right-most point
     while lower_bound < upper_bound {
-        lb_turn_after = util::compare(&hull[lower_bound], &hull[(lower_bound + 1) % hull.len()], base);
-
         // Find index of point in between the two bounds
         let mid = (upper_bound + lower_bound) / 2;
 
@@ -135,12 +133,9 @@ fn find_tangent_index(hull: &Vec<::Point>, base: &::Point) -> usize {
                   (cut_direction == Ordering::Greater && mid_turn_before == Ordering::Greater) {
             upper_bound = mid;
         } else {
-            lower_bound = mid + 1;
+            lower_bound = mid;
         }
-    }
-
-    if lower_bound == hull.len() {
-        return (lower_bound - 1) as usize;
+        lb_turn_after = util::compare(&hull[lower_bound], &hull[(lower_bound + 1) % hull.len()], base);
     }
 
     return lower_bound as usize;
